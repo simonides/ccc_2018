@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>   
+    <Appenders>  
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{%d{HH:mm:ss.SSS} %level{length=3}} %36.36logger %highlight{-} %style{%msg}{cyan}%n"/>
+        </Console>
+        <!--<Socket name="LF5_SOCKET" host="localhost" port="4454" protocol="TCP" reconnectionDelay="5000"/>-->
+    </Appenders>
+    <Loggers>  
+        <Root level="trace">   
+            <AppenderRef ref="STDOUT" level="DEBUG"/>
+            <!--<AppenderRef ref="LF5_SOCKET" level="DEBUG"/>-->
+        </Root>
+    </Loggers>
+</Configuration>
+
+
