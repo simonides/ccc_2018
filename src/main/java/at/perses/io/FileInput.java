@@ -8,13 +8,12 @@ import java.io.*;
 /**
  * Created by Paradies on 18.04.2015.
  */
-public class FileInput implements AutoCloseable{
+public class FileInput implements AutoCloseable {
     private static final Logger logger = LogManager.getLogger(FileInput.class.getName());
 
     BufferedReader bufferedReader;
 
     /**
-     *
      * @param filePath
      * @throws FileNotFoundException
      */
@@ -25,13 +24,18 @@ public class FileInput implements AutoCloseable{
     }
 
     /**
-     *
      * @return
      * @throws IOException
      */
-    public String readLine() throws IOException {
+    public String readLine() {
 
-        String line = bufferedReader.readLine();
+
+        String line = null;
+        try {
+            line = bufferedReader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         logger.trace(line);
         return line;
     }
